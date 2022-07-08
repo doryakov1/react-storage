@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     width: calc(250px + 2vmin);
-    font-size: calc(8px + 2vmin);
+    font-size: calc(10px + 2vmin);
     color: black;
     margin: 10px;
     padding: 10px;
@@ -26,7 +26,7 @@
     justify-content: center;
     align-items: center;
     width: calc(200px + 2vmin);
-    font-size: calc(8px + 2vmin);
+    font-size: calc(10px + 2vmin);
     color: black;
 }
 
@@ -37,7 +37,7 @@
     align-items: center;
      height: calc(35px + 2vmin);
     width: calc(150px + 2vmin);
-    font-size: calc(24px + 2vmin);
+    font-size: calc(28px + 2vmin);
     border-radius: 10px;
     color: white;
     background: darkgrey;
@@ -75,5 +75,5 @@
     align-self: flex-end;
     width: 100px;
     height: 25px;
-    font-size: 13px;
+    font-size: 15px;
 }
