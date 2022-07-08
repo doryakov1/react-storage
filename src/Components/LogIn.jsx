@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './LogIn.css'
 
 export default function LogIn(props) {
+  const nav = useNavigate()
   const [workerNumber, setWorkerNumber] = useState('');
   const [flag, setFlag] = useState(false)
   const getdata = () => {
@@ -23,31 +25,36 @@ export default function LogIn(props) {
           <div>Details:</div>
           <div>Full Name: {props.worker.fullName}</div>
           <div>NO.: {props.worker.workerNumber}</div>
-          <div>Forklift truck license: {props.worker.forkliftTruck}</div>
-          <h1>List of products</h1>
+          <div>Forklift truck license: {props.worker.forkliftTruck ? 'yes' : 'no'}</div>
+          <h3>List of products</h3>
           {props.products.map((product) => {
             return (
-              <div>
+              <div className='products'>
                 <span>NO. {product.productNumber}</span>
                 <span>Name: {product.fullName}</span>
-                <span>Need forklift truck: {product.forkliftTruck}</span>
+                <span>Need forklift truck: {product.forkliftTruck ? 'yes' : 'no'}</span>
+                <button>Update</button>
               </div>
             )
           })}
         </div>
       )
-    }
+        }
   }
   const checkValidtionAndNav = () => {
     const isUserExisting = (worker) => worker.workerNumber == workerNumber;
     let foundIdx = props.workers.findIndex(isUserExisting)
-    if (foundIdx == -1) {
+     if(workerNumber == 99999 ){
+      nav('/react-storage/manager')
+    }
+    else if (foundIdx == -1) {
       alert('the worker isnt exiting.')
-    } else {
+    } else{
       setFlag(true)
       props.setWorkerIdx(foundIdx)
+      }
     }
-  }
+  
   return (
     <div className='log-in'>
       {getdata()}

@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './Components/HomePage';
 import SignUp from './Components/SignUp';
-import Admin from './Components/Admin';
+import Manager from './Components/Manager';
 import LogIn from './Components/LogIn';
 import { useState } from 'react';
 function App() {
@@ -10,27 +10,27 @@ function App() {
   const [products , setProducts] = useState([{
     productNumber: '11122',
     fullName: 'Green box',
-    forkliftTruck: 'no',
+    forkliftTruck: false,
     isInPlace: false
   },{
     productNumber: '22554',
     fullName: 'Green box',
-    forkliftTruck: 'no',
+    forkliftTruck: false,
     isInPlace: false
   },{
     productNumber: '66698',
     fullName: 'Blue box',
-    forkliftTruck: 'yes',
+    forkliftTruck: true,
     isInPlace: false
   },{
     productNumber: '78544',
     fullName: 'Red box',
-    forkliftTruck: 'no',
+    forkliftTruck: false,
     isInPlace: false
   },{
     productNumber: '69875',
     fullName: 'Red box',
-    forkliftTruck: 'no',
+    forkliftTruck: false,
     isInPlace: false
   }])
   const [workerIdx , setWorkerIdx] = useState('')
@@ -54,23 +54,6 @@ function App() {
     setProducts([...products,product])
     console.log(products)
   }
-  // const deleteExpense = (idx ,workerIdx)=>{
-  //   workers[workerIdx].expenses.splice(idx,1)
-  //   setWorkers([...workers])
-  // }
-
-//   const checkValidtion = () => {
-//     const isUserExisting = (customer) => customer.fullName == userName && customer.password == password;
-//     let foundIdx = props.customers.findIndex(isUserExisting)
-//     if (userName == 'ADMIN' && password == 'ADMIN') {
-//         nav('/react-bank/admin')
-//     } else if (foundIdx != -1){
-//         props.setCustomerIdx(foundIdx)
-//         nav(`/react-bank/${userName}`)
-//     }else{
-//         alert('User didnt found')
-//     }
-// }
   return (
     <div className="App">
       <BrowserRouter>
@@ -78,7 +61,7 @@ function App() {
           <Route path='/react-storage/' element={<HomePage />} />
           <Route path='/react-storage/signup' element={<SignUp workers={workers} addWorker={addWorker}/>} />
           <Route path='/react-storage/login' element={<LogIn worker={workers[workerIdx]} workers={workers} products={products} setWorkerIdx={setWorkerIdx}/>} />
-          <Route path='/react-storage/admin' element={<Admin workers={workers}  />} />
+          <Route path='/react-storage/manager' element={<Manager workers={workers}  />} />
         </Routes>
       </BrowserRouter>
     </div>

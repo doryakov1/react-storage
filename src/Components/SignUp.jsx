@@ -42,9 +42,9 @@ export default function SignUp(props) {
       </div>
       {userNameAlert}
       <div>
-        <input onChange={(e) => setForkliftTruck(e.target.value)} type="radio" id='forklift-input-yes' name='forkliftTruckInput' value='yes' />
+        <input onChange={(e) => setForkliftTruck(e.target.value)} type="radio" id='forklift-input-yes' name='forkliftTruckInput' value={false} />
         <label htmlFor="forklift-input-yes">Yes</label>
-        <input onChange={(e) => setForkliftTruck(e.target.value)} type="radio" id='forklift-input-no' name='forkliftTruckInput' value='no' />
+        <input onChange={(e) => setForkliftTruck(e.target.value)} type="radio" id='forklift-input-no' name='forkliftTruckInput' value={true} />
         <label htmlFor="forklift-input-no">No</label>
       </div>
       <button onClick={checkValidtionAndaddWorker}>Create</button>
