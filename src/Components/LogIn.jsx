@@ -10,7 +10,7 @@ export default function LogIn(props) {
     if (flag == false) {
       return (
         <div>
-          <h1>Sign up</h1>
+          <h1>Log in</h1>
           <div>
             <label htmlFor="workerNumber">NO.</label>
             <input onChange={(e) => setWorkerNumber(e.target.value)} type="text" name='workerNumber' />
